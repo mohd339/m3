@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="المنزل الراقي — منتجات منزلية مختارة تضيف الدفء والأناقة إلى منزلك."
+  >
+  <meta name="theme-color" content="#2b221b">
+
+  <title>المنزل الراقي | تفاصيل تصنع الفرق</title>
+
+  <style>
+    :root {
+      --cream: #f7f3ec;
+      --beige: #e8ddce;
+      --wood: #94704d;
+      --dark: #2b221b;
+      --muted: #796e63;
+      --line: #e0d5c7;
+      --gold: #dfbd8b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 25px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--dark);
+      font-family: "Tahoma", sans-serif;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--wood);
+      outline-offset: 4px;
+    }
+
+    .container {
+      max-width: 1200px;
+      padding: 0 24px;
+      margin: auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      right: 20px;
+      z-index: 100;
+      padding: 12px;
+      background: white;
+    }
+
+    .skip-link:focus {
+      top: 10px;
+    }
+
+    /* =========================
+       بنر الفيديو
+       ========================= */
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      min-height: 660px;
+      min-height: clamp(580px, 78svh, 860px);
+      overflow: hidden;
+      color: #fff9f0;
+      background:
+        radial-gradient(
+          ellipse at 75% 30%,
+          #76573e 0%,
+          transparent 65%
+        ),
+        linear-gradient(120deg, #211b17, #493729);
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      pointer-events: none;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        linear-gradient(
+          to left,
+          rgba(20, 15, 11, 0.87) 0%,
+          rgba(25, 19, 14, 0.72) 38%,
+          rgba(25, 19, 14, 0.30) 72%,
+          rgba(25, 19, 14, 0.20) 100%
+        ),
+        linear-gradient(
+          to top,
+          rgba(20, 15, 11, 0.65),
+          transparent 45%
+        );
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(223, 189, 139, 0.8),
+        transparent
+      );
+    }
+
+    .hero-inner {
+      width: 100%;
+      padding-top: 78px;
+      padding-bottom: 145px;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      animation: hero-appear 0.8s ease-out both;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--wood);
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 1.8;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .hero .eyebrow {
+      padding: 9px 16px;
+      border: 1px solid rgba(223, 189, 139, 0.35);
+      border-radius: 999px;
+      background: rgba(35, 27, 20, 0.4);
+      color: #efd5ae;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .hero h1 {
+      margin: 24px 0 20px;
+      font-size: clamp(40px, 5.2vw, 72px);
+      line-height: 1.45;
+      font-weight: 700;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.24);
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero-copy p {
+      max-width: 490px;
+      margin: 0 0 32px;
+      color: #eee4d7;
+      font-size: 16px;
+      line-height: 2.1;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      min-height: 50px;
+      padding: 15px 24px;
+      border: 1px solid var(--dark);
+      border-radius: 7px;
+      background: var(--dark);
+      color: #fff7eb;
+      text-decoration: none;
+      font-size: 13px;
+      transition:
+        background 0.2s,
+        transform 0.2s,
+        box-shadow 0.2s;
+    }
+
+    .button:hover {
+      background: #594331;
+      transform: translateY(-2px);
+    }
+
+    .hero .button {
+      border-color: #dfbd8b;
+      background: linear-gradient(135deg, #eed6b2, #caa16d);
+      color: #2b2118;
+      font-weight: bold;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    }
+
+    .hero .button:hover {
+      background: #f2ddbc;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .text-link {
+      font-size: 13px;
+      text-underline-offset: 7px;
+    }
+
+    .hero .text-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 22px;
+      border: 1px solid rgba(255, 244, 225, 0.38);
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff5e7;
+      text-decoration: none;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: background 0.2s;
+    }
+
+    .hero .text-link:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .hero :focus-visible {
+      outline-color: #efd5ae;
+    }
+
+    .hero-bottom {
+      position: absolute;
+      right: 0;
+      bottom: 28px;
+      left: 0;
+    }
+
+    .hero-bottom-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .hero-caption {
+      border-inline-start: 2px solid var(--gold);
+      padding-inline-start: 16px;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .hero-caption small {
+      display: block;
+      margin-top: 4px;
+      color: #d8c8b4;
+      font-size: 11px;
+    }
+
+    .video-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 44px;
+      padding: 11px 16px;
+      border: 1px solid rgba(255, 244, 225, 0.38);
+      border-radius: 999px;
+      background: rgba(25, 20, 15, 0.48);
+      color: #fff5e7;
+      font-size: 12px;
+      flex-shrink: 0;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: background 0.2s;
+    }
+
+    .video-toggle:hover {
+      background: rgba(70, 52, 35, 0.85);
+    }
+
+    .video-toggle svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    @keyframes hero-appear {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       مزايا المجموعة
+       ========================= */
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--line);
+      padding-top: 27px;
+      padding-bottom: 27px;
+      gap: 20px;
+    }
+
+    .value {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .value-icon {
+      color: var(--wood);
+      font-size: 25px;
+    }
+
+    .value strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .value small {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* =========================
+       التصنيفات والمنتجات
+       ========================= */
+
+    .section {
+      padding-top: 70px;
+      padding-bottom: 20px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      font-size: 28px;
+      margin: 12px 0 0;
+    }
+
+    .section-heading p {
+      font-size: 13px;
+      line-height: 1.8;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .category {
+      text-align: right;
+      min-height: 110px;
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      padding: 23px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #efe7db;
+      color: var(--dark);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .category:hover {
+      background: #e8dccb;
+      border-color: var(--wood);
+    }
+
+    .category svg {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      stroke: var(--wood);
+      fill: none;
+      stroke-width: 1.3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .category strong {
+      font-size: 14px;
+    }
+
+    .category small {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 26px;
+    }
+
+    .filter {
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 10px 19px;
+      color: var(--muted);
+      background: transparent;
+      font-size: 12px;
+    }
+
+    .filter[aria-pressed="true"] {
+      background: var(--dark);
+      border-color: var(--dark);
+      color: #fff;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 23px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: #fffcf7;
+    }
+
+    .product-image {
+      position: relative;
+      aspect-ratio: 1 / 1.08;
+      background: #e8dfd3;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 13px;
+      right: 13px;
+      padding: 7px 10px;
+      background: #fff9efed;
+      color: #654d37;
+      border-radius: 3px;
+      font-size: 10px;
+    }
+
+    .product-body {
+      padding: 18px;
+    }
+
+    .product-category {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .product-body h3 {
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 9px 0 17px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .price {
+      color: #795739;
+      font-size: 15px;
+    }
+
+    .add-button {
+      width: 35px;
+      height: 35px;
+      flex-shrink: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--dark);
+      font-size: 23px;
+    }
+
+    .add-button:hover {
+      background: var(--beige);
+    }
+
+    /* =========================
+       حكاية المتجر
+       ========================= */
+
+    .story {
+      margin-top: 65px;
+      margin-bottom: 65px;
+      padding: 55px;
+      border-radius: 12px;
+      background:
+        radial-gradient(
+          ellipse at top left,
+          #8b6a4655,
+          transparent 65%
+        ),
+        linear-gradient(120deg, #29211b, #493729);
+      color: #f5eadc;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .story .eyebrow {
+      color: #d2af82;
+    }
+
+    .story h2 {
+      font-size: 32px;
+      line-height: 1.7;
+      margin: 15px 0 0;
+    }
+
+    .story p {
+      color: #d1bfaa;
+      line-height: 2.2;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .demo-note {
+      margin-bottom: 35px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.9;
+      text-align: center;
+    }
+
+    /* =========================
+       السلة والتنبيهات
+       ========================= */
+
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      max-width: calc(100vw - 35px);
+      width: max-content;
+      padding: 15px 24px;
+      border-radius: 9px;
+      background: var(--dark);
+      color: white;
+      box-shadow: 0 8px 30px #0003;
+      font-size: 13px;
+    }
+
+    .cart-dialog {
+      width: min(540px, calc(100% - 30px));
+      max-height: 85vh;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 26px;
+      color: var(--dark);
+      background: var(--cream);
+    }
+
+    .cart-dialog::backdrop {
+      background: #1c1713aa;
+      backdrop-filter: blur(4px);
+    }
+
+    .cart-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .cart-heading h2 {
+      font-size: 22px;
+    }
+
+    .close-cart {
+      border: 0;
+      background: transparent;
+      font-size: 28px;
+      color: var(--dark);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid var(--line);
+      padding: 18px 0;
+    }
+
+    .cart-item strong {
+      font-size: 13px;
+    }
+
+    .cart-item small {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+    }
+
+    .cart-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .cart-controls button {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fffaf2;
+    }
+
+    .cart-controls button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      padding: 25px 0 10px;
+    }
+
+    .cart-note {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .load-error {
+      padding: 18px;
+      text-align: center;
+      background: #f1dfcd;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       التجاوب مع الشاشات
+       ========================= */
+
+    @media (max-width: 1000px) {
+      .categories,
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 54px;
+      }
+
+      .hero-copy {
+        max-width: 580px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .hero {
+        min-height: 640px;
+      }
+
+      .hero-inner {
+        padding-top: 55px;
+        padding-bottom: 145px;
+      }
+
+      .hero-overlay {
+        background:
+          linear-gradient(
+            to left,
+            rgba(20, 15, 11, 0.83),
+            rgba(20, 15, 11, 0.48)
+          ),
+          linear-gradient(
+            to top,
+            rgba(20, 15, 11, 0.8),
+            transparent 65%
+          );
+      }
+
+      .hero h1 {
+        font-size: clamp(36px, 9vw, 48px);
+        margin-top: 22px;
+      }
+
+      .hero-copy p {
+        max-width: 420px;
+        font-size: 14px;
+        line-height: 2;
+      }
+
+      .hero .eyebrow {
+        font-size: 11px;
+      }
+
+      .hero-buttons {
+        gap: 10px;
+      }
+
+      .hero .button,
+      .hero .text-link {
+        padding: 13px 16px;
+        font-size: 12px;
+      }
+
+      .hero-bottom {
+        bottom: 24px;
+      }
+
+      .hero-bottom-inner {
+        gap: 12px;
+      }
+
+      .hero-caption {
+        font-size: 11px;
+        padding-inline-start: 10px;
+      }
+
+      .hero-caption small {
+        font-size: 10px;
+      }
+
+      .video-toggle {
+        padding: 10px 12px;
+        font-size: 11px;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .value {
+        justify-content: flex-start;
+      }
+
+      .section {
+        padding-top: 45px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .section-heading h2 {
+        font-size: 25px;
+      }
+
+      .categories {
+        gap: 10px;
+      }
+
+      .category {
+        padding: 16px 12px;
+        gap: 9px;
+      }
+
+      .category svg {
+        width: 27px;
+      }
+
+      .category strong {
+        font-size: 12px;
+      }
+
+      .category small {
+        font-size: 10px;
+      }
+
+      .product-grid {
+        gap: 12px;
+      }
+
+      .product-body {
+        padding: 12px;
+      }
+
+      .product-body h3,
+      .price {
+        font-size: 12px;
+      }
+
+      .story {
+        grid-template-columns: 1fr;
+        padding: 30px 24px;
+        gap: 20px;
+        margin-top: 40px;
+        margin-bottom: 35px;
+      }
+
+      .story h2 {
+        font-size: 27px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .container {
+        padding-right: 16px;
+        padding-left: 16px;
+      }
+
+      .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .hero-bottom-inner {
+        align-items: flex-start;
+      }
+
+      .video-toggle {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+      }
+
+      .video-toggle-label {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+
+  <!-- استدعاء الشريط العلوي -->
+  <div id="header-slot"></div>
+
+  <main id="main">
+
+    <!-- بنر الفيديو -->
+    <section class="hero" aria-labelledby="hero-title">
+      <video
+        class="hero-video"
+        id="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <source src="./media/home.mp4" type="video/mp4">
+      </video>
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">لمنزل يستحق الأجمل</span>
+
+          <h1 id="hero-title">
+            أناقة تسكن<br>
+            <span>تفاصيل منزلك.</span>
+          </h1>
+
+          <p>
+            قطع مختارة بروح دافئة ولمسة عصرية؛
+            لتصنع مساحة ترتاح لها العين، ويطمئن فيها القلب.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="button" href="#products">
+              اكتشف المجموعة
+              <span aria-hidden="true">←</span>
+            </a>
+
+            <a class="text-link" href="#story">
+              تعرّف على حكايتنا
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <div class="container hero-bottom-inner">
+          <div class="hero-caption">
+            بساطة تُلهم. تفاصيل تبقى.
+            <small>اكتشف روح المنزل الراقي</small>
+          </div>
+
+          <button
+            class="video-toggle"
+            id="video-toggle"
+            type="button"
+            aria-controls="hero-video"
+            aria-label="تشغيل فيديو الخلفية"
+            hidden
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path id="video-toggle-path" d="M8 5v14l11-7z"></path>
+            </svg>
+            <span class="video-toggle-label">تشغيل الفيديو</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="container values" aria-label="روح مجموعتنا">
+      <div class="value">
+        <span class="value-icon" aria-hidden="true">◇</span>
+        <div>
+          <strong>تصاميم منتقاة</strong>
+          <small>قطع تتناغم مع ذوقك</small>
+        </div>
+      </div>
+
+      <div class="value">
+        <span class="value-icon" aria-hidden="true">◌</span>
+        <div>
+          <strong>خامات دافئة</strong>
+          <small>جمال مستوحى من الطبيعة</small>
+        </div>
+      </div>
+
+      <div class="value">
+        <span class="value-icon" aria-hidden="true">⌂</span>
+        <div>
+          <strong>لكل زاوية حكاية</strong>
+          <small>تفاصيل تجعل البيت منزلك</small>
+        </div>
+      </div>
+    </div>
+
+    <section class="container section" id="collections">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">اختيارات تناسب حياتك</span>
+          <h2>لكل ركن، لمسته الخاصة</h2>
+        </div>
+        <p>ابدأ من المساحة التي تحب تجديدها.</p>
+      </div>
+
+      <div class="categories">
+        <button class="category" data-category="decor" type="button">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M12 3h8v6c0 4 6 7 6 13a10 7 0 0 1-20 0c0-6 6-9 6-13V3ZM11 7h10"/>
+          </svg>
+          <span>
+            <strong>ديكور وإكسسوارات</strong>
+            <small>لمسات تصنع الفرق</small>
+          </span>
+        </button>
+
+        <button class="category" data-category="kitchen" type="button">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M5 13h22v10a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5V13ZM3 13h26M12 8h8M16 8V5M2 18h3M27 18h3"/>
+          </svg>
+          <span>
+            <strong>المطبخ والضيافة</strong>
+            <small>ضيافة بروح أنيقة</small>
+          </span>
+        </button>
+
+        <button class="category" data-category="textile" type="button">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M5 6c7 2 15 2 22 0-2 7-2 13 0 20-7-2-15-2-22 0 2-7 2-13 0-20ZM10 11h12v10H10z"/>
+          </svg>
+          <span>
+            <strong>مفروشات منزلية</strong>
+            <small>راحة تحتضن يومك</small>
+          </span>
+        </button>
+
+        <button class="category" data-category="lighting" type="button">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M10 4h12l6 15H4L10 4ZM16 19v9M10 28h12"/>
+          </svg>
+          <span>
+            <strong>إضاءة منزلية</strong>
+            <small>دفء يملأ المكان</small>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="container section" id="products">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">من مجموعتنا</span>
+          <h2>تفاصيل تستحق الاقتناء</h2>
+        </div>
+        <p id="product-count" aria-live="polite"></p>
+      </div>
+
+      <div class="filters" aria-label="تصفية المنتجات حسب التصنيف">
+        <button type="button" class="filter" data-filter="all" aria-pressed="true">
+          الكل
+        </button>
+        <button type="button" class="filter" data-filter="decor" aria-pressed="false">
+          الديكور
+        </button>
+        <button type="button" class="filter" data-filter="kitchen" aria-pressed="false">
+          المطبخ
+        </button>
+        <button type="button" class="filter" data-filter="textile" aria-pressed="false">
+          المفروشات
+        </button>
+        <button type="button" class="filter" data-filter="lighting" aria-pressed="false">
+          الإضاءة
+        </button>
+      </div>
+
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <div class="container">
+      <section class="story" id="story">
+        <div>
+          <span class="eyebrow">حكاية المنزل الراقي</span>
+          <h2>ليست مجرد قطع،<br>بل إحساس بالانتماء.</h2>
+        </div>
+
+        <p>
+          من هدوء البيج إلى أصالة الخشب، نستمد رؤيتنا من التفاصيل
+          التي تجعل الحياة اليومية أجمل. نختار تصاميم متوازنة
+          تمنح منزلك شخصية هادئة، وتترك لك مساحة لتضيف حكايتك الخاصة.
+        </p>
+      </section>
+
+      <p class="demo-note">
+        نسخة عرض تجريبية: المنتجات والأسعار للتوضيح، والصور تعبيرية.
+        السلة محفوظة على هذا المتصفح، ولا تتضمن هذه النسخة دفعًا أو طلبات فعلية.
+      </p>
+    </div>
+  </main>
+
+  <!-- استدعاء الشريط السفلي -->
+  <div id="footer-slot"></div>
+
+  <dialog
+    class="cart-dialog"
+    id="cart-dialog"
+    aria-labelledby="cart-title"
+  >
+    <div class="cart-heading">
+      <h2 id="cart-title">سلة التسوق</h2>
+      <button class="close-cart" type="button" aria-label="إغلاق السلة">
+        ×
+      </button>
+    </div>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-total">
+      <strong>الإجمالي</strong>
+      <strong id="cart-total"></strong>
+    </div>
+
+    <p class="cart-note">
+      هذه سلة تجريبية. يُضاف إتمام الطلب والدفع عند ربط المتجر بالنظام الخلفي.
+    </p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const products = [
+        {
+          id: 1,
+          name: "مزهرية سيراميك بلون رملي",
+          category: "decor",
+          label: "ديكور وإكسسوارات",
+          price: 129,
+          image: "photo-1578749556568-bc2c40e68b61",
+          alt: "قطع سيراميك بتصميم منزلي",
+          tag: "لمسة طبيعية"
+        },
+        {
+          id: 2,
+          name: "طقم أكواب للضيافة",
+          category: "kitchen",
+          label: "المطبخ والضيافة",
+          price: 189,
+          image: "photo-1514228742587-6b1558fcca3d",
+          alt: "كوب بتصميم بسيط",
+          tag: "ضيافة أنيقة"
+        },
+        {
+          id: 3,
+          name: "وسادة قطنية بلون بيج",
+          category: "textile",
+          label: "مفروشات منزلية",
+          price: 89,
+          image: "photo-1584100936595-c0654b55a2e2",
+          alt: "وسائد ومفروشات منزلية",
+          tag: "راحة يومية"
+        },
+        {
+          id: 4,
+          name: "مصباح طاولة بتصميم دافئ",
+          category: "lighting",
+          label: "إضاءة منزلية",
+          price: 249,
+          image: "photo-1507473885765-e6ed057f782c",
+          alt: "مصباح منزلي بإضاءة دافئة",
+          tag: "أجواء هادئة"
+        }
+      ];
+
+      const storageKey = "elegant-home-cart-v1";
+      const grid = document.getElementById("product-grid");
+      const dialog = document.getElementById("cart-dialog");
+      const toast = document.getElementById("toast");
+
+      let toastTimer;
+      let cart = [];
+
+      const money = value =>
+        new Intl.NumberFormat("ar-SA", {
+          style: "currency",
+          currency: "SAR",
+          maximumFractionDigits: 0
+        }).format(value);
+
+      try {
+        const saved = JSON.parse(
+          localStorage.getItem(storageKey) || "[]"
+        );
+
+        if (Array.isArray(saved)) {
+          cart = products.flatMap(product => {
+            const item = saved.find(entry => entry?.id === product.id);
+
+            return item &&
+              Number.isInteger(item.quantity) &&
+              item.quantity > 0
+                ? [{
+                    id: product.id,
+                    quantity: Math.min(item.quantity, 99)
+                  }]
+                : [];
+          });
+        }
+      } catch {
+        cart = [];
+      }
+
+      window.HomeStore = {
+        getCart: () => cart.map(item => ({ ...item }))
+      };
+
+      function notify(message) {
+        clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.hidden = false;
+
+        toastTimer = setTimeout(() => {
+          toast.hidden = true;
+        }, 2600);
+      }
+
+      /* تشغيل فيديو البنر والتحكم فيه */
+      function initHeroVideo() {
+        const video = document.getElementById("hero-video");
+        const toggle = document.getElementById("video-toggle");
+        const label = toggle.querySelector(".video-toggle-label");
+        const icon = document.getElementById("video-toggle-path");
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        );
+
+        let failed = false;
+
+        video.muted = true;
+        video.defaultMuted = true;
+        toggle.hidden = false;
+
+        function updateControl() {
+          const playing = !video.paused && !video.ended;
+
+          label.textContent = playing
+            ? "إيقاف الفيديو"
+            : "تشغيل الفيديو";
+
+          toggle.setAttribute(
+            "aria-label",
+            playing
+              ? "إيقاف فيديو الخلفية مؤقتًا"
+              : "تشغيل فيديو الخلفية"
+          );
+
+          icon.setAttribute(
+            "d",
+            playing
+              ? "M6 5h4v14H6zM14 5h4v14h-4z"
+              : "M8 5v14l11-7z"
+          );
+        }
+
+        function handleVideoError() {
+          failed = true;
+          video.hidden = true;
+          toggle.hidden = true;
+          // يبقى البنر بتدرجه اللوني والنص عند تعذر تحميل الفيديو.
+        }
+
+        async function playVideo(userRequested = false) {
+          if (failed) return;
+
+          try {
+            await video.play();
+          } catch (error) {
+            if (error.name === "NotSupportedError") {
+              handleVideoError();
+            }
+
+            if (userRequested && error.name !== "AbortError") {
+              notify("تعذر تشغيل الفيديو حاليًا.");
+            }
+          }
+
+          updateControl();
+        }
+
+        video.addEventListener("play", updateControl);
+        video.addEventListener("pause", updateControl);
+        video.addEventListener("ended", updateControl);
+        video.addEventListener("error", handleVideoError);
+        video.querySelector("source").addEventListener(
+          "error",
+          handleVideoError
+        );
+
+        toggle.addEventListener("click", () => {
+          if (video.paused) {
+            playVideo(true);
+          } else {
+            video.pause();
+          }
+        });
+
+        reducedMotion.addEventListener("change", event => {
+          if (event.matches) {
+            video.autoplay = false;
+            video.pause();
+          }
+        });
+
+        if (video.error) {
+          handleVideoError();
+          return;
+        }
+
+        // احترام إعداد تقليل الحركة مع بقاء التشغيل اليدوي متاحًا.
+        if (reducedMotion.matches) {
+          video.autoplay = false;
+          video.pause();
+        } else {
+          playVideo();
+        }
+
+        updateControl();
+      }
+
+      function saveCart() {
+        try {
+          localStorage.setItem(storageKey, JSON.stringify(cart));
+        } catch {
+          // تبقى السلة متاحة خلال الجلسة إذا تعذر التخزين المحلي.
+        }
+
+        window.dispatchEvent(new CustomEvent("home:cart-updated"));
+        renderCart();
+      }
+
+      function renderProducts(category = "all") {
+        const visible = products.filter(product =>
+          category === "all" || product.category === category
+        );
+
+        grid.innerHTML = visible.map(product => `
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="https://images.unsplash.com/${product.image}?auto=format&fit=crop&w=650&q=80"
+                alt="${product.alt}"
+                loading="lazy"
+                width="650"
+                height="700"
+              >
+              <span class="product-tag">${product.tag}</span>
+            </div>
+
+            <div class="product-body">
+              <span class="product-category">${product.label}</span>
+              <h3>${product.name}</h3>
+
+              <div class="product-bottom">
+                <strong class="price">${money(product.price)}</strong>
+
+                <button
+                  class="add-button"
+                  type="button"
+                  data-add="${product.id}"
+                  aria-label="إضافة ${product.name} إلى السلة"
+                >+</button>
+              </div>
+            </div>
+          </article>
+        `).join("");
+
+        document.getElementById("product-count").textContent =
+          `عدد المنتجات المعروضة: ${visible.length.toLocaleString("ar-SA")}`;
+
+        document.querySelectorAll("[data-filter]").forEach(button => {
+          button.setAttribute(
+            "aria-pressed",
+            String(button.dataset.filter === category)
+          );
+        });
+      }
+
+      function renderCart() {
+        const container = document.getElementById("cart-items");
+        let total = 0;
+
+        container.innerHTML = cart.length
+          ? cart.map(item => {
+              const product = products.find(p => p.id === item.id);
+              total += product.price * item.quantity;
+
+              return `
+                <div class="cart-item">
+                  <div>
+                    <strong>${product.name}</strong>
+                    <small>${money(product.price)} للقطعة</small>
+                  </div>
+
+                  <div class="cart-controls">
+                    <button
+                      type="button"
+                      data-change="-1"
+                      data-id="${product.id}"
+                      aria-label="تقليل كمية ${product.name}"
+                    >−</button>
+
+                    <span>${item.quantity.toLocaleString("ar-SA")}</span>
+
+                    <button
+                      type="button"
+                      data-change="1"
+                      data-id="${product.id}"
+                      aria-label="زيادة كمية ${product.name}"
+                      ${item.quantity >= 99 ? "disabled" : ""}
+                    >+</button>
+                  </div>
+                </div>
+              `;
+            }).join("")
+          : '<p class="cart-note">سلتك فارغة. اكتشف المجموعة وأضف ما يعجبك.</p>';
+
+        document.getElementById("cart-total").textContent = money(total);
+      }
+
+      grid.addEventListener("click", event => {
+        const button = event.target.closest("[data-add]");
+        if (!button) return;
+
+        const id = Number(button.dataset.add);
+        const existing = cart.find(item => item.id === id);
+
+        if (existing && existing.quantity >= 99) {
+          notify("وصلت إلى الحد الأقصى للكمية.");
+          return;
+        }
+
+        if (existing) {
+          existing.quantity++;
+        } else {
+          cart.push({ id, quantity: 1 });
+        }
+
+        saveCart();
+        notify("تمت إضافة المنتج إلى السلة");
+      });
+
+      document.querySelectorAll("[data-filter]").forEach(button => {
+        button.addEventListener("click", () => {
+          renderProducts(button.dataset.filter);
+        });
+      });
+
+      document.querySelectorAll("[data-category]").forEach(button => {
+        button.addEventListener("click", () => {
+          renderProducts(button.dataset.category);
+          document.getElementById("products").scrollIntoView();
+        });
+      });
+
+      document.getElementById("cart-items").addEventListener("click", event => {
+        const button = event.target.closest("[data-change]");
+        if (!button) return;
+
+        const id = Number(button.dataset.id);
+        const change = Number(button.dataset.change);
+        const item = cart.find(entry => entry.id === id);
+
+        if (!item) return;
+
+        item.quantity = Math.min(99, item.quantity + change);
+        cart = cart.filter(entry => entry.quantity > 0);
+        saveCart();
+      });
+
+      window.addEventListener("home:open-cart", () => {
+        renderCart();
+        if (!dialog.open) dialog.showModal();
+      });
+
+      dialog.querySelector(".close-cart").addEventListener("click", () => {
+        dialog.close();
+      });
+
+      dialog.addEventListener("click", event => {
+        const rect = dialog.getBoundingClientRect();
+
+        const outside =
+          event.clientX < rect.left ||
+          event.clientX > rect.right ||
+          event.clientY < rect.top ||
+          event.clientY > rect.bottom;
+
+        if (event.target === dialog && outside) {
+          dialog.close();
+        }
+      });
+
+      /*
+       * تحميل القوالب المحلية الموثوقة وتشغيل السكربتات الموجودة بها.
+       */
+      async function loadTemplate(targetId, file) {
+        const target = document.getElementById(targetId);
+
+        try {
+          const response = await fetch(file);
+
+          if (!response.ok) {
+            throw new Error(
+              `تعذر تحميل ${file}: ${response.status}`
+            );
+          }
+
+          target.innerHTML = await response.text();
+
+          const scripts = [...target.querySelectorAll("script")];
+
+          for (const oldScript of scripts) {
+            const newScript = document.createElement("script");
+
+            for (const attribute of oldScript.attributes) {
+              newScript.setAttribute(attribute.name, attribute.value);
+            }
+
+            newScript.textContent = oldScript.textContent;
+            oldScript.replaceWith(newScript);
+          }
+        } catch (error) {
+          console.error(error);
+
+          const message = document.createElement("div");
+          message.className = "load-error";
+          message.textContent =
+            `تعذر تحميل ${file}. تأكد من وجود الملفات في المجلد نفسه وتشغيل الموقع عبر Live Server.`;
+
+          target.replaceChildren(message);
+        }
+      }
+
+      initHeroVideo();
+      renderProducts();
+      renderCart();
+
+      Promise.all([
+        loadTemplate("header-slot", "./header.html"),
+        loadTemplate("footer-slot", "./footer.html")
+      ]);
+    })();
+  </script>
+</body>
+</html>

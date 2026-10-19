@@ -1,0 +1,508 @@
+<style>
+  .rh-header,
+  .rh-header * {
+    box-sizing: border-box;
+  }
+
+  .rh-header {
+    position: relative;
+    z-index: 20;
+    color: #f8f2e8;
+    background: linear-gradient(120deg, #211b17, #46372b);
+    font-family: "Tahoma", sans-serif;
+  }
+
+  .rh-announcement {
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.7;
+    color: #ead9c3;
+    background: rgba(0, 0, 0, 0.18);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .rh-header-inner {
+    max-width: 1200px;
+    min-height: 106px;
+    margin: auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+
+  .rh-brand {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+  }
+
+  /* الإطار الدائري للشعار */
+  .rh-brand-mark {
+    width: 74px;
+    height: 74px;
+    flex: 0 0 74px;
+    display: grid;
+    place-items: center;
+    padding: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(240, 214, 174, 0.75);
+    border-radius: 50%;
+    background: linear-gradient(
+      145deg,
+      #f2dfbd 0%,
+      #b18a58 45%,
+      #775532 70%,
+      #e8cba0 100%
+    );
+    box-shadow:
+      0 6px 18px rgba(0, 0, 0, 0.28),
+      0 0 0 4px rgba(218, 187, 145, 0.07);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  /* مساحة داخلية تضمن ظهور الشعار كاملاً */
+  .rh-brand-logo-surface {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  .rh-brand-logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .rh-brand:hover .rh-brand-mark {
+    transform: translateY(-2px);
+    box-shadow:
+      0 9px 22px rgba(0, 0, 0, 0.32),
+      0 0 0 5px rgba(218, 187, 145, 0.12);
+  }
+
+  .rh-brand strong {
+    display: block;
+    font-size: 21px;
+    line-height: 1.5;
+  }
+
+  .rh-brand small {
+    display: block;
+    margin-top: 5px;
+    color: #cbb69b;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .rh-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .rh-nav a {
+    color: #dfd2c1;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .rh-nav a:hover,
+  .rh-nav a[aria-current="page"] {
+    color: #fff;
+  }
+
+  .rh-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .rh-header button {
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .rh-cart,
+  .rh-menu-toggle {
+    min-height: 44px;
+    border: 1px solid #78634d;
+    color: #fff5e8;
+    background: transparent;
+    border-radius: 9px;
+    padding: 10px 12px;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .rh-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+  }
+
+  .rh-cart:hover,
+  .rh-menu-toggle:hover {
+    background: rgba(218, 187, 145, 0.1);
+    border-color: #c3a077;
+  }
+
+  .rh-cart-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .rh-cart-label {
+    font-size: 13px;
+  }
+
+  .rh-cart-count {
+    display: inline-grid;
+    place-items: center;
+    min-width: 21px;
+    height: 21px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: #c3a077;
+    color: #241c16;
+    font-size: 11px;
+  }
+
+  .rh-menu-toggle {
+    display: none;
+    width: 44px;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .rh-header :focus-visible {
+    outline: 2px solid #e0bb8d;
+    outline-offset: 5px;
+  }
+
+  @media (max-width: 960px) {
+    .rh-header-inner {
+      flex-wrap: wrap;
+      gap: 18px;
+      padding: 16px 20px;
+    }
+
+    .rh-brand strong {
+      font-size: 18px;
+    }
+
+    .rh-brand-mark {
+      width: 64px;
+      height: 64px;
+      flex-basis: 64px;
+    }
+
+    .rh-menu-toggle {
+      display: inline-flex;
+    }
+
+    .rh-nav {
+      display: none;
+      order: 3;
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      border-top: 1px solid #65513e;
+    }
+
+    .rh-nav.is-open {
+      display: flex;
+    }
+
+    .rh-nav a {
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .rh-nav a:last-child {
+      border-bottom: 0;
+    }
+
+    .rh-cart-label {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .rh-announcement {
+      padding: 9px 12px;
+      font-size: 11px;
+    }
+
+    .rh-header-inner {
+      min-height: 88px;
+      padding: 14px 12px;
+      gap: 12px;
+    }
+
+    .rh-brand {
+      gap: 10px;
+    }
+
+    .rh-brand-mark {
+      width: 54px;
+      height: 54px;
+      flex-basis: 54px;
+      padding: 3px;
+    }
+
+    .rh-brand-logo-surface {
+      padding: 7px;
+    }
+
+    .rh-brand strong {
+      font-size: 16px;
+    }
+
+    .rh-brand small {
+      margin-top: 4px;
+      font-size: 8px;
+      letter-spacing: 1.3px;
+    }
+
+    .rh-header-actions {
+      gap: 6px;
+    }
+
+    .rh-cart {
+      padding: 10px 8px;
+      gap: 5px;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .rh-header-actions {
+      margin-inline-start: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rh-header *,
+    .rh-header *::before,
+    .rh-header *::after {
+      transition: none !important;
+    }
+  }
+</style>
+
+<header class="rh-header" dir="rtl">
+  <div class="rh-announcement">
+    تفاصيل تميزك، وقطع تمنح منزلك دفئًا وأناقة
+  </div>
+
+  <div class="rh-header-inner">
+    <a
+      class="rh-brand"
+      href="./index.html"
+      aria-label="المنزل الراقي — الرئيسية"
+    >
+      <span class="rh-brand-mark">
+        <span class="rh-brand-logo-surface">
+          <img
+            class="rh-brand-logo"
+            src="./media/images.jpg"
+            alt=""
+            width="74"
+            height="74"
+            decoding="async"
+          />
+        </span>
+      </span>
+
+      <span>
+        <strong>المنزل الراقي</strong>
+        <small lang="en" dir="ltr">ELEGANT HOME</small>
+      </span>
+    </a>
+
+    <nav
+      class="rh-nav"
+      id="rh-navigation"
+      aria-label="القائمة الرئيسية"
+    >
+      <a href="./index.html" aria-current="page">الرئيسية</a>
+      <a href="#collections">التصنيفات</a>
+      <a href="#products">منتجاتنا</a>
+      <a href="#story">حكايتنا</a>
+      <a href="./contact.html">تواصل معنا</a>
+    </nav>
+
+    <div class="rh-header-actions">
+      <button
+        class="rh-cart"
+        type="button"
+        aria-label="عرض سلة التسوق"
+      >
+        <svg
+          class="rh-cart-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M3 3h2l2.4 12h11.8l2-8H6"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <circle
+            cx="9"
+            cy="20"
+            r="1.5"
+            fill="currentColor"
+          />
+          <circle
+            cx="18"
+            cy="20"
+            r="1.5"
+            fill="currentColor"
+          />
+        </svg>
+
+        <span class="rh-cart-label">السلة</span>
+
+        <span
+          class="rh-cart-count"
+          id="rh-cart-count"
+          aria-live="polite"
+          aria-atomic="true"
+        >٠</span>
+      </button>
+
+      <button
+        class="rh-menu-toggle"
+        type="button"
+        aria-controls="rh-navigation"
+        aria-expanded="false"
+        aria-label="فتح القائمة"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  (() => {
+    const header = document.querySelector(".rh-header");
+
+    if (!header || header.dataset.initialized === "true") return;
+
+    header.dataset.initialized = "true";
+
+    const toggle = header.querySelector(".rh-menu-toggle");
+    const nav = header.querySelector(".rh-nav");
+    const count = header.querySelector("#rh-cart-count");
+    const cartButton = header.querySelector(".rh-cart");
+    const menuIcon = toggle.querySelector("span");
+    const mobileQuery = window.matchMedia("(max-width: 960px)");
+
+    function setMenuState(open) {
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute(
+        "aria-label",
+        open ? "إغلاق القائمة" : "فتح القائمة"
+      );
+
+      nav.classList.toggle("is-open", open);
+      menuIcon.textContent = open ? "✕" : "☰";
+    }
+
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") !== "true";
+      setMenuState(open);
+    });
+
+    nav.addEventListener("click", event => {
+      if (!event.target.closest("a")) return;
+      setMenuState(false);
+    });
+
+    header.addEventListener("keydown", event => {
+      if (
+        event.key === "Escape" &&
+        toggle.getAttribute("aria-expanded") === "true"
+      ) {
+        setMenuState(false);
+        toggle.focus();
+      }
+    });
+
+    document.addEventListener("click", event => {
+      if (!header.contains(event.target)) {
+        setMenuState(false);
+      }
+    });
+
+    mobileQuery.addEventListener("change", () => {
+      setMenuState(false);
+    });
+
+    function updateCount() {
+      let items = [];
+
+      try {
+        const cart = window.HomeStore?.getCart?.();
+        items = Array.isArray(cart) ? cart : [];
+      } catch (error) {
+        items = [];
+      }
+
+      const total = items.reduce((sum, item) => {
+        const quantity = Number(item?.quantity);
+
+        return sum + (
+          Number.isFinite(quantity) && quantity > 0
+            ? Math.floor(quantity)
+            : 0
+        );
+      }, 0);
+
+      const formattedTotal = total.toLocaleString("ar-SA");
+
+      count.textContent = formattedTotal;
+      cartButton.setAttribute(
+        "aria-label",
+        `عرض سلة التسوق، عدد القطع: ${formattedTotal}`
+      );
+    }
+
+    cartButton.addEventListener("click", () => {
+      window.dispatchEvent(new CustomEvent("home:open-cart"));
+    });
+
+    window.addEventListener("home:cart-updated", updateCount);
+    updateCount();
+  })();
+</script>
